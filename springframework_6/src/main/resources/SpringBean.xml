@@ -10,4 +10,44 @@
      class：设置bean所对应类型的全类名
  -->
     <bean id="user" class="com.chanpller.springframework_6.chapter2.User"></bean>
+
+    <bean id="student" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <property name="age" value="24"></property>
+        <property name="name" value="张三"></property>
+    </bean>
+    <bean id="student1" class="com.chanpller.springframework_6.chapter3.model.Student">
+       <constructor-arg name="age" value="22"></constructor-arg>
+       <constructor-arg name="name" value="李四"></constructor-arg>
+    </bean>
+    <bean id="student2" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <constructor-arg index="0" value="王五"></constructor-arg>
+        <constructor-arg index="1" value="30"></constructor-arg>
+    </bean>
+    <bean id="student_null" class="com.chanpller.springframework_6.chapter3.model.Student">
+       <property name="other">
+           <null></null>
+       </property>
+    </bean>
+    <bean id="student_xml" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <property name="other" value="a &lt; b">
+        </property>
+    </bean>
+    <bean id="student_cdata" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <property name="other" >
+            <value><![CDATA[a < b]]></value>
+
+        </property>
+    </bean>
+
+    <bean id="dept" class="com.chanpller.springframework_6.chapter3.model.Dept">
+        <property name="name" value="工程部">
+
+        </property>
+    </bean>
+
+    <bean id="emp" class="com.chanpller.springframework_6.chapter3.model.Emp">
+        <property name="name" value="张三" ></property>
+        <property name="age" value="20" ></property>
+        <property name="dept" ref="dept" ></property>
+    </bean>
 </beans>
