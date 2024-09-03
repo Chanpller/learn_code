@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+       xmlns:p="http://www.springframework.org/schema/p"
+       加入p命名空间配置
+-->
+    <bean id="dept" class="com.chanpller.springframework_6.chapter3.model.Dept">
+        <property name="name" value="工程部"></property>
+    </bean>
+    <bean id="emp_p" class="com.chanpller.springframework_6.chapter3.model.Emp" p:age="20" p:name="p_张三" p:dept-ref="dept">
+        <!--<property name="dept.name" value="p_工程部"></property> 使用p命名空间后不能再组合 级联赋值了-->
+    </bean>
+
+</beans>

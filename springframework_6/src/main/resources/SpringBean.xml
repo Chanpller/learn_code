@@ -50,4 +50,55 @@
         <property name="age" value="20" ></property>
         <property name="dept" ref="dept" ></property>
     </bean>
+
+    <bean id="emp_inner" class="com.chanpller.springframework_6.chapter3.model.Emp">
+        <property name="name" value="内部注入_张三" ></property>
+        <property name="age" value="20" ></property>
+        <property name="dept">
+            <bean id="dep_inner"  class="com.chanpller.springframework_6.chapter3.model.Dept">
+                <property name="name" value="内部注入部门"></property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="emp_cascade" class="com.chanpller.springframework_6.chapter3.model.Emp">
+        <property name="name" value="级联_张三" ></property>
+        <property name="age" value="20" ></property>
+        <property name="dept" ref="dept"></property>
+        <property name="dept.name" value="级联_部门"></property>
+    </bean>
+
+    <bean id="collection" class="com.chanpller.springframework_6.chapter3.model.Collection">
+       <property name="hobi">
+           <array>
+               <value>抽烟</value>
+               <value>喝酒</value>
+               <value>烫头</value>
+           </array>
+       </property>
+        <property name="freinds">
+            <list>
+                <ref bean="student"></ref>
+                <ref bean="student1"></ref>
+                <ref bean="student2"></ref>
+            </list>
+        </property>
+        <property name="students">
+            <map>
+               <entry>
+                   <key>
+                       <value>1001</value>
+                   </key>
+                  <ref  bean="student_cdata"></ref>
+               </entry>
+                <entry>
+                    <key>
+                        <value>1002</value>
+                    </key>
+                    <ref bean="student_xml"></ref>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
 </beans>

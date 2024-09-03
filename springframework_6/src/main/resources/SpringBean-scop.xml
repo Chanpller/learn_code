@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dept_singleton" class="com.chanpller.springframework_6.chapter3.model.Dept" scope="singleton">
+        <property name="name" value="作用域部门"></property>
+    </bean>
+    <bean id="dept_prototype" class="com.chanpller.springframework_6.chapter3.model.Dept" scope="prototype">
+        <property name="name" value="作用域部门"></property>
+    </bean>
+</beans>

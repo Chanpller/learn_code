@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       加入util配置
+       -->
+    <bean id="student" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <property name="age" value="24"></property>
+        <property name="name" value="张三"></property>
+    </bean>
+    <bean id="student1" class="com.chanpller.springframework_6.chapter3.model.Student">
+       <constructor-arg name="age" value="22"></constructor-arg>
+       <constructor-arg name="name" value="李四"></constructor-arg>
+    </bean>
+    <bean id="student2" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <constructor-arg index="0" value="王五"></constructor-arg>
+        <constructor-arg index="1" value="30"></constructor-arg>
+    </bean>
+    <bean id="student_null" class="com.chanpller.springframework_6.chapter3.model.Student">
+       <property name="other">
+           <null></null>
+       </property>
+    </bean>
+    <bean id="student_xml" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <property name="other" value="a &lt; b">
+        </property>
+    </bean>
+    <bean id="student_cdata" class="com.chanpller.springframework_6.chapter3.model.Student">
+        <property name="other" >
+            <value><![CDATA[a < b]]></value>
+
+        </property>
+    </bean>
+    <util:list id="freinds">
+        <ref bean="student"></ref>
+        <ref bean="student1"></ref>
+        <ref bean="student2"></ref>
+    </util:list>
+    <util:map id="students">
+        <entry>
+            <key>
+                <value>1001</value>
+            </key>
+            <ref  bean="student_cdata"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>1002</value>
+            </key>
+            <ref bean="student_xml"></ref>
+        </entry>
+    </util:map>
+    <bean id="collection" class="com.chanpller.springframework_6.chapter3.model.Collection">
+       <property name="hobi">
+           <array>
+               <value>抽烟</value>
+               <value>喝酒</value>
+               <value>烫头</value>
+           </array>
+       </property>
+        <property name="freinds" ref="freinds"></property>
+        <property name="students" ref="students"></property>
+    </bean>
+
+</beans>
