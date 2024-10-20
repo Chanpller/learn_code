@@ -10,5 +10,6 @@
     <modules>
         <module>springframework_6</module>
         <module>juc</module>
+        <module>spring6_springboot3_ssm</module>
     </modules>
 </project>
