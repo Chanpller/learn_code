@@ -1,6 +1,5 @@
-package com.chanpller.ioc;
+package com.chanpller.spring6_springboot3_ssm.chapter2;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class IocTest {
