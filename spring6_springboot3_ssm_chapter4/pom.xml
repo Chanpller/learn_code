@@ -11,7 +11,7 @@
 
     <groupId>com.chanpller</groupId>
     <artifactId>spring6_springboot3_ssm_chapter4</artifactId>
-
+    <packaging>war</packaging>
     <properties>
         <spring.version>6.0.6</spring.version>
         <servlet.api>9.1.0</servlet.api>
@@ -48,6 +48,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.0</version>
         </dependency>
 
     </dependencies>
