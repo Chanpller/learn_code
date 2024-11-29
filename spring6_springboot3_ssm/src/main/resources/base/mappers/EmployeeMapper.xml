@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chanpller.spring6_springboot3_ssm.chapter3.base.dao.EmployeeMapper">
+    <select id="selectEmployee" resultType="com.chanpller.spring6_springboot3_ssm.chapter3.base.entity.Employee">
+        select emp_id empId,emp_name empName,emp_salary empSalary from t_emp where emp_id=#{df}
+    </select>
+
+    <select id="ibatiesTestSelectOne" resultType="com.chanpller.spring6_springboot3_ssm.chapter3.base.entity.Employee">
+        select emp_id empId,emp_name empName,emp_salary empSalary from t_emp where emp_id=#{df}
+    </select>
+
+    <select id="ibatiesTestSelectOneValue" resultType="com.chanpller.spring6_springboot3_ssm.chapter3.base.entity.Employee">
+        select emp_id empId,emp_name empName,emp_salary empSalary from t_emp where emp_id=${df}
+    </select>
+
+    <insert id="insertEmp" >
+        insert into  t_emp(emp_name,emp_salary) values (#{empId},#{empSalary});
+    </insert>
+
+    <update id="updateEmployeeArg" >
+        update t_emp  set emp_salary=#{arg1} where emp_id=#{arg0};
+    </update>
+
+    <update id="updateEmployeeAnnationParam" >
+        update t_emp  set emp_salary=#{empSalary} where emp_id=#{empId};
+    </update>
+    <update id="updateEmployeeParam" >
+        update t_emp  set emp_salary=#{param2} where emp_id=#{param1};
+    </update>
+
+    <update id="updateEmployeeByMap">
+        update t_emp set emp_salary=#{empSalaryKey} where emp_id=#{empIdKey}
+    </update>
+
+    <select id="selectEmpCount" resultType="int">
+        select count(*) from t_emp
+    </select>
+
+    <select id="selectEmployeeAliases" resultType="employee">
+        select emp_id ,emp_name ,emp_salary from t_emp where emp_id=#{df}
+    </select>
+
+    <!-- Map<String,Object> selectEmpNameAndMaxSalary(); -->
+    <!-- 返回工资最高的员工的姓名和他的工资 -->
+    <select id="selectEmpNameAndMaxSalary" resultType="map">
+        SELECT
+        emp_name,
+        emp_salary 员工工资,
+        (SELECT AVG(emp_salary) FROM t_emp) 部门平均工资
+        FROM t_emp WHERE emp_salary=(
+        SELECT MAX(emp_salary) FROM t_emp
+        )
+    </select>
+
+    <!-- List<Employee> selectAll(); -->
+    <select id="selectAll" resultType="Employee">
+        select emp_id empId,emp_name empName,emp_salary empSalary
+        from t_emp
+    </select>
+
+    <!-- int insertEmployee(Employee employee); -->
+    <!-- useGeneratedKeys属性字面意思就是“使用生成的主键” -->
+    <!-- keyProperty属性可以指定主键在实体类对象中对应的属性名，Mybatis会将拿到的主键值存入这个属性 -->
+    <insert id="insertEmployee" useGeneratedKeys="true" keyProperty="empId">
+        insert into t_emp(emp_name,emp_salary)
+        values(#{empName},#{empSalary})
+    </insert>
+</mapper>
