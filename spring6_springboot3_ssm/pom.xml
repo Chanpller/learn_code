@@ -11,6 +11,18 @@
 
     <groupId>com.chanpller.spring6_springboot3_ssm</groupId>
     <artifactId>spring6_springboot3_ssm</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+               <!-- <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <spring.version>6.0.6</spring.version>
@@ -89,7 +101,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.26</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
