@@ -9,7 +9,7 @@ public class ConnectionUtl {
     public final static String DRIVER = "com.mysql.cj.jdbc.Driver" ;
     public final static String URL = "jdbc:mysql://localhost:3306/qqzonedb?useUnicode=true&characterEncoding=utf-8&useSSL=false";
     public final static String USER = "root";
-    public final static String PWD = "HHXXttxs19" ;
+    public final static String PWD = "root" ;
 
     public static Connection getConn(){
         Connection connection = connectionThreadLocal.get();

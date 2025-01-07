@@ -11,7 +11,7 @@ public abstract class BaseDAO<T> {
     public final String DRIVER = "com.mysql.jdbc.Driver" ;
     public final String URL = "jdbc:mysql://localhost:3306/fruitdb?useUnicode=true&characterEncoding=utf-8&useSSL=false";
     public final String USER = "root";
-    public final String PWD = "HHXXttxs19" ;
+    public final String PWD = "root" ;
 
     protected Connection conn ;
     protected PreparedStatement psmt ;
