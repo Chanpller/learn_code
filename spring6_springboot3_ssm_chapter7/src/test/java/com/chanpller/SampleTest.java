@@ -199,4 +199,60 @@ public class SampleTest {
         int result = userMapper.update(null, updateWrapper);
         System.out.println("result = " + result);
     }
+
+    @Test
+    public void testQuick6(){
+
+        User user = userMapper.selectById(1);
+        System.out.println(user);
+    }
+    @Test
+    public void testInsertId(){
+
+        User user = new User();
+        user.setName("测试逐渐");
+        user.setAge(10);
+        user.setEmail("test");
+                userMapper.insert(user);
+        System.out.println(user);
+    }
+
+    @Test
+    public void testLogicDelete(){
+
+        userMapper.deleteById(1);
+    }
+
+    //演示乐观锁生效场景
+    @Test
+    public void testQuick7(){
+        //步骤1: 先查询,在更新 获取version数据
+        //同时查询两条,但是version唯一,最后更新的失败
+        User user  = userMapper.selectById(4);
+        User user1  = userMapper.selectById(4);
+
+        user.setAge(20);
+        user1.setAge(30);
+
+        int i = userMapper.updateById(user);
+        System.out.println(i);
+        System.out.println(user);
+        //乐观锁生效,失败!
+        int i1 = userMapper.updateById(user);
+        System.out.println(i1);
+        System.out.println(user1);
+
+        //再更新user是可以成功的
+        userMapper.updateById(user);
+    }
+
+    @Test
+    public void testQuick8(){
+        User user = new User();
+        user.setName("custom_name");
+        user.setEmail("xxx@mail.com");
+        //Caused by: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Prohibition of table update operation
+        //全局更新,报错
+        userService.saveOrUpdate(user,null);
+    }
 }

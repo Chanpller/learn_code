@@ -3,7 +3,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      url: jdbc:mysql://localhost:3306/mybatis-example
+      url: jdbc:mysql://localhost:3306/ssm_exmaple
       username: root
       password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
