@@ -21,5 +21,6 @@
         <module>spring6_springboot3_ssm_chapter5</module>
         <module>spring6_springboot3_ssm_chapter6</module>
         <module>spring6_springboot3_ssm_chapter7</module>
+        <module>spring6_springboot3_ssm_chapter8</module>
     </modules>
 </project>

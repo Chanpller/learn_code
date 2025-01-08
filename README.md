@@ -55,3 +55,19 @@ JDK 14	Maven 3.6.2及以上
 JDK 15	Maven 3.6.3及以上
 JDK 16	Maven 3.8.1及以上
 JDK 17	Maven 3.8.3及以上
+
+IDEA 报错 Package 'java.util' is declared in module 'java.base', which is not in the module graph
+在 IDEA 中更改了 JDK 版本之后报错：Package 'java.util' is declared in module 'java.base', which is not in the module graph，项目中的所有 java.util 和 java.lang 包的代码全部带红色波浪线...
+
+解决方法：清理 IDEA 缓存：
+File -> Invalidate caches -> select "Clear file system cache and Local history" -> Invalidate and Restart
+
+
+springboot 3.0.5 报Cannot load driver class: org.h2.Driver
+实际是druid未加载。在resources下创建META-INFO/spring目录。创建文件org.springframework.boot.autoconfigure.AutoConfiguration.imports
+文件内容com.alibaba.druid.spring.boot3.autoconfigure.DruidDataSourceAutoConfigure
+
+mybatisplus自定义分页时
+入参第一个需要放IPage,Mapper参数返回时需要指定返回参数为Page，否则会报异常
+Page<Headline> selectPageMap(IPage<Headline> page, @Param("portalVo") PortalVo portalVo);
+org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4
