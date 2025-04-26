@@ -12,6 +12,18 @@
     <groupId>com.chanpller</groupId>
     <artifactId>spring6_springboot3_ssm_chapter4</artifactId>
     <packaging>war</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <properties>
         <spring.version>6.0.6</spring.version>
         <servlet.api>9.1.0</servlet.api>
