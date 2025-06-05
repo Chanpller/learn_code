@@ -3,16 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!--所有springboot项目都必须继承自 spring-boot-starter-parent-->
-    <parent>
+    <!--<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.5</version>
-    </parent>
+    </parent>-->
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example</groupId>
     <artifactId>learn_code</artifactId>
     <version>1.0</version>
-    <build>
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -23,7 +23,7 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
     <packaging>pom</packaging>
     <modules>
         <module>springframework_6</module>
@@ -34,5 +34,12 @@
         <module>spring6_springboot3_ssm_chapter6</module>
         <module>spring6_springboot3_ssm_chapter7</module>
         <module>spring6_springboot3_ssm_chapter8</module>
+        <module>redis7_jedis</module>
+        <module>java_base</module>
+        <module>java_code</module>
+        <module>java_web</module>
+        <module>jvm</module>
+        <module>redis_lettuce</module>
+        <module>redis7_RedisTemplate</module>
     </modules>
 </project>
