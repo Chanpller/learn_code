@@ -41,5 +41,6 @@
         <module>jvm</module>
         <module>redis_lettuce</module>
         <module>redis7_RedisTemplate</module>
+        <module>redis7_lettuce_nodes</module>
     </modules>
 </project>

@@ -1,4 +1,4 @@
-package com.chanpller.redis7.config;
+package redis7.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
