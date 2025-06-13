@@ -42,5 +42,6 @@
         <module>redis_lettuce</module>
         <module>redis7_RedisTemplate</module>
         <module>redis7_lettuce_nodes</module>
+        <module>test</module>
     </modules>
 </project>
