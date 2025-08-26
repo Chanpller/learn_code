@@ -44,5 +44,6 @@
         <module>redis7_lettuce_nodes</module>
         <module>test</module>
         <module>redis7_test_canal</module>
+        <module>redis7_bloom_filter</module>
     </modules>
 </project>
